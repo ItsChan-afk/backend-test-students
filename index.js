@@ -18,4 +18,8 @@ app.post('/register' , (req, res) => {
     res.send('OK pr dl')
 })
 
+app.get('/test' , (req , res) => {
+    res.json({message : "Welcome"})
+})
+
 app.listen(4000)    
