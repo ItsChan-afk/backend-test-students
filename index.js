@@ -4,10 +4,11 @@ const cors = require('cors')
 
 const app = express()
 app.use(express.json())
-app.use(cors({
-    
-}))
 
+app.use(cors({
+    origin: ['http://localhost:3000', 'http://localhost:5173'],
+    credentials: true
+}));
 
 app.post('/register' , (req, res) => {
     const {username , email , password} = req.body;
@@ -16,3 +17,5 @@ app.post('/register' , (req, res) => {
     }
     res.send('OK pr dl')
 })
+
+app.listen(4000)    
